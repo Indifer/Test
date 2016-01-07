@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <input type="button" value="Connect" id="btnConnect" />
+            <input type="button" value="DisConnect" id="btnDisConnect" />
+            <hr />
+            <input type="text" id="txtInput" />
+            <input type="button" value="Send" id="btnSend" />
+            <br />
+            <span id="messageSpan" style="color:red;"></span>
+        </fieldset>
+    </div>
+    <script src="~/assets/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+    var ws;
+    $(
+        function () {
+            $("#btnConnect").click(function () {
+                $("#messageSpan").text("Connection...");
+                ws = new WebSocket("ws://" + window.location.hostname + ":" + window.location.port + "/api/Default");
+                ws.onopen = function () {
+                    $("#messageSpan").text("Connected!");
+                };
+                ws.onmessage = function (result) {
+                    $("#messageSpan").text(result.data);
+                };
+                ws.onerror = function (error) {
+                    $("#messageSpan").text(error.data);
+                };
+                ws.onclose = function () {
+                    $("#messageSpan").text("Disconnected!");
+                };
+            });
+            $("#btnSend").click(function () {
+                if (ws.readyState == WebSocket.OPEN) {
+                    ws.send($("#txtInput").val());
+                }
+                else {
+                    $("messageSpan").text("Connection is Closed!");
+                }
+            });
+            $("#btnDisConnect").click(function () {
+                ws.close();
+            });
+        }
+    );
+    </script>
+
+</body>
+
+</html>

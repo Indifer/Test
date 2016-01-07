@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CacheManager.Web</name>
+    </assembly>
+    <members>
+        <member name="T:CacheManager.Web.CacheManagerOutputCacheProvider">
+            <summary>
+            Implements a simple System.Web.Caching.OutputCacheProvider which uses a cache manager
+            configured via web.config.
+            </summary>
+        </member>
+        <member name="P:CacheManager.Web.CacheManagerOutputCacheProvider.Cache">
+            <summary>
+            Gets the cache.
+            </summary>
+            <value>The cache.</value>
+            <exception cref="T:System.InvalidOperationException">
+            Output cache provider has not yet been initialized.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Web.CacheManagerOutputCacheProvider.Add(System.String,System.Object,System.DateTime)">
+            <summary>
+            Inserts the specified entry into the output cache.
+            </summary>
+            <param name="key">A unique identifier for <paramref name="entry"/>.</param>
+            <param name="entry">The content to add to the output cache.</param>
+            <param name="utcExpiry">The time and date on which the cached entry expires.</param>
+            <returns>A reference to the specified provider.</returns>
+        </member>
+        <member name="M:CacheManager.Web.CacheManagerOutputCacheProvider.Get(System.String)">
+            <summary>
+            Returns a reference to the specified entry in the output cache.
+            </summary>
+            <param name="key">A unique identifier for a cached entry in the output cache.</param>
+            <returns>
+            The <paramref name="key"/> value that identifies the specified entry in the cache, or
+            null if the specified entry is not in the cache.
+            </returns>
+        </member>
+        <member name="M:CacheManager.Web.CacheManagerOutputCacheProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Initializes the provider.
+            </summary>
+            <param name="name">The friendly name of the provider.</param>
+            <param name="config">
+            A collection of the name/value pairs representing the provider-specific attributes
+            specified in the configuration for this provider.
+            </param>
+            <exception cref="T:System.InvalidOperationException">Might be re thrown.</exception>
+        </member>
+        <member name="M:CacheManager.Web.CacheManagerOutputCacheProvider.Remove(System.String)">
+            <summary>
+            Removes the specified entry from the output cache.
+            </summary>
+            <param name="key">The unique identifier for the entry to remove from the output cache.</param>
+        </member>
+        <member name="M:CacheManager.Web.CacheManagerOutputCacheProvider.Set(System.String,System.Object,System.DateTime)">
+            <summary>
+            Inserts the specified entry into the output cache, overwriting the entry if it is
+            already cached.
+            </summary>
+            <param name="key">A unique identifier for <paramref name="entry"/>.</param>
+            <param name="entry">The content to add to the output cache.</param>
+            <param name="utcExpiry">
+            The time and date on which the cached <paramref name="entry"/> expires.
+            </param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="1280dp"
+    android:layout_height="800dp"
+    android:background="@drawable/background"
+>
+  <WebView
+      android:id="@+id/wvPrint"
+      android:layout_marginLeft="30.5dp"
+      android:layout_marginTop="30dp"
+      android:layout_width="192dp"
+      android:layout_height="1dp"></WebView>
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="30.5dp"
+      android:layout_marginTop="5dp"
+      android:background="@color/white_corners_bg"
+      android:orientation="horizontal" >
+
+    <include layout="@layout/menubar" />
+  </LinearLayout>
+  <LinearLayout
+      android:id="@+id/navcartprint"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="30.5dp"
+      android:layout_marginTop="90dp"
+      android:visibility="gone"
+      android:orientation="horizontal" >
+    <include layout="@layout/nav_cartprint" />
+  </LinearLayout>
+
+
+
+  <LinearLayout
+      android:id="@+id/navarrang"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="30.5dp"
+      android:layout_marginTop="90dp"
+      android:orientation="horizontal" >
+    <include layout="@layout/nav_arrang" />
+  </LinearLayout>
+</FrameLayout>

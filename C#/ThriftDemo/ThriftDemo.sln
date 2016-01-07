@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{42561A10-79BC-4194-A225-792A5E259E30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{D22826D4-FA5F-4734-8424-DA288485E24A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Temp", "Temp", "{86564F88-3C4D-45FA-B60B-97C4AB1F6B09}"
+	ProjectSection(SolutionItems) = preProject
+		test.thrift = test.thrift
+	EndProjectSection
+EndProject
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "thrift-0.9.3", "thrift-0.9.3.exe", "{E905CD2A-273E-4C85-B81E-78FDB0FB1F05}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = D:\Work\test\C#\ThriftDemo\thrift-0.9.3.exe
+		RemoteMachine = DESKTOP-QN8POB5
+		StartingDirectory = D:\Work\test\C#\ThriftDemo
+		Environment = 默认值
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		UseLegacyDebugEngines = No
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42561A10-79BC-4194-A225-792A5E259E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42561A10-79BC-4194-A225-792A5E259E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42561A10-79BC-4194-A225-792A5E259E30}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{42561A10-79BC-4194-A225-792A5E259E30}.Debug|x86.Build.0 = Debug|Any CPU
+		{42561A10-79BC-4194-A225-792A5E259E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42561A10-79BC-4194-A225-792A5E259E30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42561A10-79BC-4194-A225-792A5E259E30}.Release|x86.ActiveCfg = Release|Any CPU
+		{42561A10-79BC-4194-A225-792A5E259E30}.Release|x86.Build.0 = Release|Any CPU
+		{D22826D4-FA5F-4734-8424-DA288485E24A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D22826D4-FA5F-4734-8424-DA288485E24A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D22826D4-FA5F-4734-8424-DA288485E24A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D22826D4-FA5F-4734-8424-DA288485E24A}.Debug|x86.Build.0 = Debug|Any CPU
+		{D22826D4-FA5F-4734-8424-DA288485E24A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D22826D4-FA5F-4734-8424-DA288485E24A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D22826D4-FA5F-4734-8424-DA288485E24A}.Release|x86.ActiveCfg = Release|Any CPU
+		{D22826D4-FA5F-4734-8424-DA288485E24A}.Release|x86.Build.0 = Release|Any CPU
+		{E905CD2A-273E-4C85-B81E-78FDB0FB1F05}.Debug|Any CPU.ActiveCfg = Release|x86
+		{E905CD2A-273E-4C85-B81E-78FDB0FB1F05}.Debug|x86.ActiveCfg = Release|x86
+		{E905CD2A-273E-4C85-B81E-78FDB0FB1F05}.Release|Any CPU.ActiveCfg = Release|x86
+		{E905CD2A-273E-4C85-B81E-78FDB0FB1F05}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E905CD2A-273E-4C85-B81E-78FDB0FB1F05} = {86564F88-3C4D-45FA-B60B-97C4AB1F6B09}
+	EndGlobalSection
+EndGlobal

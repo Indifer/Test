@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:text="当前的USB打印机"
+        android:textSize="28sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="PID："
+            android:textSize="28sp" />
+
+        <EditText
+            android:id="@+id/usbPid"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/textbox_corners_bg"
+            android:gravity="center_vertical"
+            android:inputType="none"
+            android:paddingLeft="15px"
+            android:textColor="#FF999999"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="VID："
+            android:textSize="28sp" />
+
+        <EditText
+            android:id="@+id/usbVid"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/textbox_corners_bg"
+            android:gravity="center_vertical"
+            android:inputType="none"
+            android:paddingLeft="15px"
+            android:textColor="#FF999999"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnSaveUSB"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="90dp"
+            android:background="@color/white_corners_bg"
+            android:text="确定"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/btnCancelUSB"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="90dp"
+            android:background="@color/white_corners_bg"
+            android:text="取消"
+            android:textColor="#000000"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+</LinearLayout>

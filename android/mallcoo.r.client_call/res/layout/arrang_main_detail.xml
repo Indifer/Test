@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/lunch_main_list"
+        android:layout_width="wrap_content"
+        android:layout_height="392dp"
+        android:background="#FFFFFF"
+        android:divider="#FFFFFF"
+         />
+
+    <ListView
+        android:id="@+id/dinner_main_list"
+        android:layout_width="wrap_content"
+        android:layout_height="392dp"
+        android:background="#FFFFFF"
+        android:divider="#FFFFFF" 
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/dinnerStastic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="124.6dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_left_top_corners_bg"
+                android:orientation="horizontal" >
+
+                <TextView
+                   
+                    android:layout_width="114dp"
+                    android:layout_height="46dp"
+                    android:gravity="center"
+                    android:text="当前领号数"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <TextView
+                    
+                    android:layout_width="106dp"
+                    android:layout_height="46dp"
+                    android:gravity="center"
+                    android:text="已入坐数"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <TextView
+                    
+                    android:layout_width="100dp"
+                    android:layout_height="46dp"
+                    android:gravity="center"
+                    android:text="未到人数"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@color/gray_left_bottom_corners_bg"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/lblCurrentSum"
+                    android:layout_width="114dp"
+                    android:layout_height="78dp"
+                    android:gravity="center"
+                    android:text="50"
+                    android:textColor="#FFFFFF"
+                    android:textSize="42sp" />
+
+                <TextView
+                    android:id="@+id/lblArrival"
+                    android:layout_width="106dp"
+                    android:layout_height="78dp"
+                    android:gravity="center"
+                    android:text="10"
+                    android:textColor="#FFFFFF"
+                    android:textSize="42sp" />
+
+                <TextView
+                    android:id="@+id/lblNotArrival"
+                    android:layout_width="100dp"
+                    android:layout_height="78dp"
+                    android:gravity="center"
+                    android:text="10"
+                    android:textColor="#FFFFFF"
+                    android:textSize="42sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="425dp"
+            android:layout_height="124.6dp"
+            android:layout_marginLeft="4dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_right_top_corners_bg"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:gravity="center"
+                    android:text="平均等待时间"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="75.6dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/gray_right_bottom_corners_bg"
+                android:orientation="horizontal" >
+
+                <GridView
+                    android:id="@+id/queueDinneravg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#666666"
+                    android:gravity="center"
+                    android:stackFromBottom="false"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/lunchStastic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="124.6dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_left_top_corners_bg"
+                android:orientation="horizontal" >
+
+                <TextView
+                   
+                    android:layout_width="114dp"
+                    android:layout_height="46dp"
+                    android:gravity="center"
+                    android:text="当前领号数"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <TextView
+                    
+                    android:layout_width="106dp"
+                    android:layout_height="46dp"
+                    android:gravity="center"
+                    android:text="已入坐数"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <TextView
+                    
+                    android:layout_width="100dp"
+                    android:layout_height="46dp"
+                    android:gravity="center"
+                    android:text="未到人数"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@color/gray_left_bottom_corners_bg"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/lblCurrentSum"
+                    android:layout_width="114dp"
+                    android:layout_height="78dp"
+                    android:gravity="center"
+                    android:text="50"
+                    android:textColor="#FFFFFF"
+                    android:textSize="42sp" />
+
+                <TextView
+                    android:id="@+id/lblArrival"
+                    android:layout_width="106dp"
+                    android:layout_height="78dp"
+                    android:gravity="center"
+                    android:text="10"
+                    android:textColor="#FFFFFF"
+                    android:textSize="42sp" />
+
+                <TextView
+                    android:id="@+id/lblNotArrival"
+                    android:layout_width="100dp"
+                    android:layout_height="78dp"
+                    android:gravity="center"
+                    android:text="10"
+                    android:textColor="#FFFFFF"
+                    android:textSize="42sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="425dp"
+            android:layout_height="124.6dp"
+            android:layout_marginLeft="4dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_right_top_corners_bg"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:gravity="center"
+                    android:text="平均等待时间"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="75.6dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/gray_right_bottom_corners_bg"
+                android:orientation="horizontal" >
+
+                <GridView
+                    android:id="@+id/queueLunchavg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#666666"
+                    android:gravity="center"
+                    android:stackFromBottom="false"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

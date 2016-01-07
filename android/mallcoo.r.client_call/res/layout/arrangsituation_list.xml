@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="712dp"
+    android:layout_height="62.3dp"
+    android:background="#FFFFFF"
+    android:orientation="horizontal" >
+    
+    <TextView 
+            android:id="@+id/lblTicketDisplay"
+            android:text="小桌A001"
+            android:gravity="center"
+            android:layout_width="178dp"
+            android:layout_height="match_parent"
+            android:textColor="#D96460"
+            android:textSize="22sp"/>
+    <TextView 
+            android:id="@+id/lblPeopleNum"
+            android:text="3位用餐"
+            android:gravity="center"
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:textColor="#000000"
+            android:textSize="22sp"/>
+    <TextView 
+            android:id="@+id/lblTicketTime"
+            android:text="12:45领号"
+            android:gravity="center"
+            android:layout_width="178dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="match_parent"
+            android:textColor="#999999"
+            android:textSize="22sp"/>
+    <TextView 
+            android:text="已等待 "
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_height="match_parent"
+            android:textColor="#000000"
+            android:textSize="22sp"/>
+    <TextView 
+        	android:id="@+id/lblWaitTime"
+            android:text="50"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#D96460"
+            android:textSize="22sp"/>
+    <TextView 
+            android:text=" 分钟"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#000000"
+            android:textSize="22sp"/>
+
+</LinearLayout>

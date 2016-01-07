@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_height="658.6dp"
+    android:background="@color/white_corners_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+  <EditText
+      android:id="@+id/txtprintNo"
+      android:layout_width="329.3dp"
+      android:layout_height="70dp"
+      android:layout_marginTop="32dp"
+      android:background="@drawable/textbox_corners_bg"
+      android:hint="输入8位打印号"
+      android:textColorHint="#CCCCCC"
+      android:textColor="#FF999999"
+      android:textSize="28sp"
+      android:gravity="center_vertical"
+      android:paddingLeft="15px"
+      android:inputType="none"
+        />
+
+  <include
+    android:id="@+id/printnumkeypad"
+        android:layout_width="329.3dp"
+        android:layout_height="329.3dp"
+        android:layout_marginTop="21.36dp"
+        layout="@layout/base_numkeypad" />
+
+    <Button
+        android:id="@+id/btnPrint"
+        android:text="打印菜单"
+        android:textColor="#FFFFFF"
+        android:layout_width="329.3dp"
+        android:layout_height="71.2dp"
+        android:layout_marginTop="21.36dp"
+        android:textSize="45sp"
+        android:background="@color/red_corners_bg"
+       />
+
+</LinearLayout>

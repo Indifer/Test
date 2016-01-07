@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="1219dp"
+    android:layout_height="wrap_content"
+    android:background="@color/white_corners_bg"
+    android:orientation="horizontal" >
+
+  <LinearLayout
+      android:layout_width="161dp"
+      android:layout_height="73dp"
+      android:gravity="center"
+      android:orientation="vertical" >
+    <TextView
+        android:id="@+id/shopName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="星巴克"
+        android:textColor="#555555"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/shopBranchName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(大悦城店)"
+        android:textColor="#555555"
+        android:textSize="15sp" />
+  </LinearLayout>
+
+  <RadioGroup
+      android:id="@+id/rg_condition"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:orientation="horizontal" >
+
+    <RadioButton
+        android:id="@+id/arrangRB"
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/menubar_rb_state"
+        android:button="@null"
+        android:checked="true"
+        android:gravity="center"
+        android:text="排号"
+        android:textColor="@drawable/menubar_rb_state"
+        android:textSize="28sp" />
+
+    <RadioButton
+        android:id="@+id/printRB"
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/menubar_rb_state"
+        android:button="@null"
+        android:gravity="center"
+        android:text="餐单打印"
+        android:textColor="@drawable/menubar_rb_state"
+        android:textSize="28sp" />
+  </RadioGroup>
+
+  <LinearLayout
+      android:layout_width="37dp"
+      android:layout_height="73dp"
+      android:layout_gravity="right|top"
+      android:gravity="right|center"
+      android:layout_marginRight="50dp"
+      android:layout_weight="1"
+      android:orientation="horizontal" >
+    <ImageButton
+        android:id="@+id/setting"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="50dp"
+        android:layout_width="37dp"
+       android:layout_height="37dp"
+       android:background="@drawable/setting"
+         />
+    <ImageButton
+   android:id="@+id/close"
+   android:layout_width="37dp"
+   android:layout_height="37dp"
+   android:background="@drawable/btn_close_state"
+   android:contentDescription="1" />
+  </LinearLayout>
+
+
+
+</LinearLayout>

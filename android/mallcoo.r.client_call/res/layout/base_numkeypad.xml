@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/numkey_div"
+    android:layout_width="329.3dp"
+    android:layout_height="329.3dp"
+    android:background="@drawable/corners_bg"
+    android:orientation="horizontal"
+   
+    android:padding="25dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <Button
+            android:id="@+id/btn_numpad_1"
+            android:layout_width="87.22dp"
+            android:layout_height="64.08dp"
+            android:background="@drawable/btn_numpad_1_state"
+            android:tag="1"
+             />
+
+        <Button
+            android:id="@+id/btn_numpad_2"
+            android:layout_width="87.22dp"
+            android:layout_height="64.08dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/btn_numpad_2_state"
+            android:tag="2"
+            />
+
+        <Button
+            android:id="@+id/btn_numpad_3"
+            android:layout_width="87.22dp"
+            android:layout_height="64.08dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/btn_numpad_3_state"
+            android:tag="3"
+            />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="71.2dp" >
+
+        <Button
+            android:id="@+id/btn_numpad_4"
+            android:layout_width="87.22dp"
+            android:layout_height="64.08dp"
+            android:background="@drawable/btn_numpad_4_state"
+            android:tag="4"
+            />
+
+        <Button
+            android:id="@+id/btn_numpad_5"
+            android:layout_width="87.22dp"
+            android:layout_height="64.08dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/btn_numpad_5_state"
+            android:tag="5"
+            />
+
+        <Button
+            android:id="@+id/btn_numpad_6"
+            android:layout_width="87.22dp"
+            android:layout_height="64.08dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/btn_numpad_6_state"
+            android:tag="6"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="142.4dp" >
+
+        <Button
+            android:id="@+id/btn_numpad_7"
+            android:layout_width="87.22dp"
+            android:layout_height="64.08dp"
+            android:background="@drawable/btn_numpad_7_state"
+            android:tag="7"
+            />
+
+        <Button
+            android:id="@+id/btn_numpad_8"
+            android:layout_width="87.22dp"
+            android:layout_height="64.08dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/btn_numpad_8_state"
+            android:tag="8"
+            />
+
+        <Button
+            android:id="@+id/btn_numpad_9"
+            android:layout_width="87.22dp"
+            android:layout_height="64.08dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/btn_numpad_9_state"
+            android:tag="9"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="213.6dp" >
+
+        <Button
+            android:id="@+id/btn_numpad_c"
+            android:layout_width="87.22dp"
+            android:layout_height="64.08dp"
+            android:background="@drawable/btn_numpad_c_state"
+            />
+
+        <Button
+            android:id="@+id/btn_numpad_0"
+            android:layout_width="87.22dp"
+            android:layout_height="64.08dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/btn_numpad_0_state"
+            android:tag="0"
+            />
+
+        <Button
+            android:id="@+id/btn_numpad_back"
+            android:layout_width="87.22dp"
+            android:layout_height="64.08dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/btn_numpad_back_state"
+            />
+    </LinearLayout>
+
+</FrameLayout>

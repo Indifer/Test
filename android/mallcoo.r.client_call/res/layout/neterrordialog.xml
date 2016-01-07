@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="800dp"
+    android:layout_height="500dp"
+    android:background="@color/white_corners_bg"
+    android:layout_gravity="center_horizontal"
+   
+    android:orientation="vertical" >
+  <TextView
+      android:id="@+id/txtNetErrContent"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#000000"
+          android:textSize="40sp"
+          android:layout_marginTop="100dp"
+          android:layout_gravity="center_horizontal"
+          android:text="正在连接服务器"
+     />
+  <Button
+      android:id="@+id/btnServerStart"
+          android:layout_width="370dp"
+          android:layout_height="80dp"
+          android:textSize="45sp"
+          android:background="@color/red_corners_bg"
+          android:layout_marginTop="20dp"
+          android:text="以服务端启动 "
+          android:layout_gravity="center_horizontal"
+          android:textColor="#FFFFFF" />
+  <Button
+         android:id="@+id/btnNetCancel"
+             android:layout_width="370dp"
+             android:layout_height="80dp"
+             android:textSize="45sp"
+             android:background="@color/red_corners_bg"
+             android:layout_marginTop="50dp"
+             android:text="退出应用程序 "
+             android:layout_gravity="center_horizontal"
+             android:textColor="#FFFFFF" />
+</LinearLayout>

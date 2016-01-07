@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="789dp"
+    android:layout_height="74dp"
+    android:background="#FFFFFF"
+    android:layout_marginTop="5dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+    
+    <LinearLayout 
+        android:layout_width="107dp"
+    	android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TextView 
+            android:id="@+id/lbldeskType"
+            android:text="小桌"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_height="33dp"
+            android:textColor="#333333"
+            android:textSize="28sp"/>
+        <TextView 
+            android:id="@+id/lblQueueNumber"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_height="31dp"
+            android:text="(1位等候)"
+            android:textColor="#9D9D9D"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="188dp"
+        android:background="@drawable/tag_queuenum"
+        android:layout_height="55dp" >
+        <TextView 
+            android:id="@+id/lblCurrentNumber"
+            android:text="C001"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="-7dp"
+            android:layout_marginLeft="25dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFD96663"
+            android:textSize="38sp"/>
+        <TextView 
+            android:id="@+id/lblPeopleNum"
+            android:text="5人用餐,"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#FF9D9D9D"
+            android:textSize="16sp"
+            />
+         <TextView 
+             android:id="@+id/lblCurrentTicketDate"
+            android:text="13:54领号"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp"
+            android:layout_marginLeft="70dp"
+            android:textColor="#FF9D9D9D"
+            android:textSize="16sp"
+            />
+    </FrameLayout>
+    
+    <Button 
+        	android:id="@+id/btnAlarm"
+        	android:text="呼叫"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            
+            android:textSize="28sp"
+          android:textColor="@drawable/btn_textcolor_state"
+            android:background="@drawable/btn_call_state"
+        />
+    <Button 
+        	android:id="@+id/btnPass"
+        	android:text="未到"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="30dp"
+             
+            android:textSize="28sp"
+          android:textColor="@drawable/btn_textcolor_state"
+            android:background="@drawable/btn_grey_state"
+        />
+    <Button 
+            android:id="@+id/btnIn"
+        	android:text="入座"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="15dp"
+             
+            android:textSize="28sp"
+            android:textColor="@drawable/btn_textcolor_state"
+            android:background="@drawable/btn_grey_state"
+        />
+    
+     <Button 
+           android:id="@+id/btnNext"
+        	android:text="下一位"
+            android:layout_width="99dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="15dp"
+             
+            android:textSize="28sp"
+           android:textColor="@drawable/btn_textcolor_state"
+            android:background="@drawable/btn_light_state"
+        />
+
+</LinearLayout>

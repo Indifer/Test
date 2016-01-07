@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppZooKeeperTest", "ConsoleAppZooKeeperTest\ConsoleAppZooKeeperTest.csproj", "{0C974929-2619-41CE-AC7E-B1DF75446357}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppRedis", "ConsoleAppRedis\ConsoleAppRedis.csproj", "{FC050FC6-88E0-45D4-BA59-7700ACBF0613}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C974929-2619-41CE-AC7E-B1DF75446357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C974929-2619-41CE-AC7E-B1DF75446357}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C974929-2619-41CE-AC7E-B1DF75446357}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C974929-2619-41CE-AC7E-B1DF75446357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC050FC6-88E0-45D4-BA59-7700ACBF0613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC050FC6-88E0-45D4-BA59-7700ACBF0613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC050FC6-88E0-45D4-BA59-7700ACBF0613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC050FC6-88E0-45D4-BA59-7700ACBF0613}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

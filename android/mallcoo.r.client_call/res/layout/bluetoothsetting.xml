@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+  <TextView
+       android:id="@+id/txtConnectState"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textSize="28sp"
+        />
+  <Button
+        android:id="@+id/btnBluetoothCancel"
+        android:text="退出"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+  <TextView
+           android:id="@+id/txtBluetoothTitle"
+           android:text=""
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="15sp"
+            />
+  <Button
+        android:id="@+id/btnBluetoothOpen"
+        android:text="开启蓝牙"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <Button 
+        android:id="@+id/btnScanBluetooth"
+        android:text="扫描蓝牙"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView 
+            android:text="发现蓝牙"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            />
+    <ListView 
+        android:id="@+id/bluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+      
+        />
+        <TextView 
+            android:text="配对蓝牙"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            />
+    <ListView
+        android:id="@+id/bluetoothAccept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_weight="1"
+        />
+    
+    
+
+</LinearLayout>

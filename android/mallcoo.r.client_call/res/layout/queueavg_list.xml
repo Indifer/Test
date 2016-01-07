@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:gravity="center_horizontal"
+    android:layout_height="75.6dp"
+    android:orientation="vertical" >
+
+  <TextView
+      android:id="@+id/lblSeatName"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center_horizontal"
+      android:layout_marginTop="15dp"
+      android:textColor="#FFFFFF"
+      android:textSize="18sp"
+      android:text="小桌" />
+
+  <LinearLayout
+      android:id="@+id/lblWaitTimeAndMin"
+      android:gravity="center_horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/lblWaitTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:text="10" />
+    <TextView
+      android:id="@+id/lblMin"
+        android:layout_marginLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:text="分钟" />
+  </LinearLayout>
+
+</LinearLayout>
