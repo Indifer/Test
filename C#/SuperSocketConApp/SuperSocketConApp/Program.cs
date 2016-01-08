@@ -9,13 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SuperSocket.Common;
+using System.Threading;
+using System.Diagnostics;
 
 namespace SuperSocketConApp
 {
     class Program
     {
         static void Main(string[] args)
-        {
+        {          
+
             Console.WriteLine("Press any key to start the server!");
 
             Console.ReadKey();
@@ -63,6 +66,7 @@ namespace SuperSocketConApp
 
             Console.WriteLine("The server was stopped!");
             Console.ReadKey();
+            
         }
 
         //private static void AppServer_NewRequestReceived(MySession session, StringRequestInfo requestInfo)
