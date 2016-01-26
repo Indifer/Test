@@ -1,0 +1,121 @@
+﻿<#
+//
+// MessagePack for CLI
+//
+// Copyright (C) 2010 FUJIWARA, Yusuke
+//
+//    Licensed under the Apache License, Version 2.0 (the "License");
+//    you may not use this file except in compliance with the License.
+//    You may obtain a copy of the License at
+//
+//        http://www.apache.org/licenses/LICENSE-2.0
+//
+//    Unless required by applicable law or agreed to in writing, software
+//    distributed under the License is distributed on an "AS IS" BASIS,
+//    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//    See the License for the specific language governing permissions and
+//    limitations under the License.
+//
+#>
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ include file="..\..\Configuration.ttinclude" #>
+<#@ assembly Name="System.Core" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+// This file defines RpcServerOptions which is chunk of boilerplate.
+#>
+#region -- License Terms --
+//
+// MessagePack for CLI
+//
+// Copyright (C) 2010 FUJIWARA, Yusuke
+//
+//    Licensed under the Apache License, Version 2.0 (the "License");
+//    you may not use this file except in compliance with the License.
+//    You may obtain a copy of the License at
+//
+//        http://www.apache.org/licenses/LICENSE-2.0
+//
+//    Unless required by applicable law or agreed to in writing, software
+//    distributed under the License is distributed on an "AS IS" BASIS,
+//    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//    See the License for the specific language governing permissions and
+//    limitations under the License.
+//
+#endregion -- License Terms --
+
+using System;
+using System.Diagnostics.Contracts;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+<#= Generate( "MsgPack.Rpc", "ObjectPoolConfiguration",
+	new Property()
+	{
+		Name = "Name",
+		Type = "string",
+		Default = "null",
+		Summary = "Gets or sets the name of the pool for debugging.",
+		Value = "The name of the pool for debugging. " +
+			"The default is <c>null</c>.",
+	},
+	new Property()
+	{
+		Name = "MinimumReserved",
+		Type = "int",
+		Default = "1",
+		Summary = "Gets or sets the minimum reserved object count in the pool.",
+		Value = "The minimum reserved object count in the pool. " +
+			"The default is 1.",
+		Precondition = Constraints.NotNegative,
+		Postcondition = Constraints.NotNegative
+	},
+	new Property()
+	{
+		Name = "MaximumPooled",
+		Type = "int?",
+		Default = "null",
+		Summary = "Gets or sets the maximum poolable objects count.",
+		Value = "The maximum poolable objects count. " +
+			"<c>null</c> indicates unlimited pooling. " +
+			"The default is <c>null</c>.",
+		Precondition = Constraints.NullOrNotNegative,
+		Postcondition = Constraints.NullOrNotNegative
+	},
+	new Property()
+	{
+		Name = "ExhausionPolicy",
+		Type = "ExhausionPolicy",
+		Default = "ExhausionPolicy.BlockUntilAvailable",
+		Summary = "Gets or sets the exhausion policy of the pool.",
+		Value = "The exhausion policy of the pool. " +
+			"The default is <see cref=\"F:ExhausionPolicy.BlockUntilAvailable\"/>.",
+		Precondition = Constraints.OnlyDefined,
+		Postcondition = Constraints.OnlyDefined
+	},
+	new Property()
+	{
+		Name = "BorrowTimeout",
+		Type = "TimeSpan?",
+		Default = "null",
+		Summary = "Gets or sets the maximum concurrency for the each clients.",
+		Value = "The timeout of blocking of the borrowing when the pool is exhausited. " +
+			"<c>null</c> indicates unlimited waiting. " +
+			"The default is <c>null</c>.",
+		Precondition = Constraints.NullOrPositive,
+		Postcondition = Constraints.NullOrPositive
+	},
+	new Property()
+	{
+		Name = "EvitionInterval",
+		Type = "TimeSpan?",
+		Default = "TimeSpan.FromMinutes( 3 )",
+		Summary = "Gets or sets the interval to evict extra pooled objects.",
+		Value = "The interval to evict extra pooled objects. " +
+			"The default is 3 minutes.",
+		Precondition = Constraints.NullOrPositive,
+		Postcondition = Constraints.NullOrPositive
+	}
+) #>

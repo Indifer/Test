@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77ABC1A9-0719-47AD-B2E1-0B12E49E3CD2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MsgPack</RootNamespace>
+    <AssemblyName>MsgPack.Rpc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\MsgPack.Rpc.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\net40-client\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\bin\net40-client\MsgPack.Rpc.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\MsgPack.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CodeAnalysis|AnyCPU'">
+    <OutputPath>..\..\bin\CodeAnalysis\</OutputPath>
+    <DefineConstants>TRACE;CODE_ANALYSIS</DefineConstants>
+    <DocumentationFile>..\..\bin\CodeAnalysis\MsgPack.Rpc.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MsgPack">
+      <HintPath>..\..\packages\MsgPack.Cli.0.5.3\lib\net40-client\MsgPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CommonAssemblyInfo.Rpc.cs">
+      <Link>Properties\CommonAssemblyInfo.Rpc.cs</Link>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rpc\ArraySegmentExtensions.cs" />
+    <Compile Include="Rpc\ByteArraySegmentStream.cs" />
+    <Compile Include="Rpc\Diagnostics\FileMessagePackStreamLogger.cs" />
+    <Compile Include="Rpc\Diagnostics\IMessagePackStreamLogger.cs" />
+    <Compile Include="Rpc\Diagnostics\IsolatedStorageFileMessagePackStreamLogger.cs" />
+    <Compile Include="Rpc\ExceptionDispatchInfo.cs" />
+    <Compile Include="Rpc\ExceptionExtensions.cs" />
+    <Compile Include="Rpc\ExceptionModifiers.cs" />
+    <Compile Include="Rpc\ExhausionPolicy.cs" />
+    <Compile Include="Rpc\FreezableObject.cs" />
+    <Compile Include="Rpc\IFreezable.cs" />
+    <Compile Include="Rpc\IStackTracePreservable.cs" />
+    <Compile Include="Rpc\MessagePackRpcMethodAttribute.cs" />
+    <Compile Include="Rpc\MessagePackRpcServiceContractAttribute.cs" />
+    <Compile Include="Rpc\ObjectPoolCorruptedException.cs" />
+    <Compile Include="Rpc\ObjectPool`1.cs" />
+    <Compile Include="Rpc\ObjectPoolConfiguration.cs" />
+    <Compile Include="Rpc\ObjectPoolConfiguration.Properties.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ObjectPoolConfiguration.Properties.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rpc\ObjectPoolEmptyException.cs" />
+    <Compile Include="Rpc\OnTheFlyObjectPool`1.cs" />
+    <Compile Include="Rpc\Protocols\Filters\MessageFilterProvider.cs" />
+    <Compile Include="Rpc\Protocols\Filters\QuotaMessageFilterProvider`1.cs" />
+    <Compile Include="Rpc\Protocols\Filters\QuotaMessageFilter`1.cs" />
+    <Compile Include="Rpc\Protocols\Filters\StreamLoggingMessageFilterProvider`1.cs" />
+    <Compile Include="Rpc\Protocols\Filters\StreamLoggingMessageFilter`1.cs" />
+    <Compile Include="Rpc\Protocols\IContextBoundableTransport.cs" />
+    <Compile Include="Rpc\Diagnostics\MessagePackStreamLogger.cs" />
+    <Compile Include="Rpc\Protocols\MessageContext.cs" />
+    <Compile Include="Rpc\Protocols\InboundMessageContext.cs" />
+    <Compile Include="Rpc\Protocols\Filters\MessageFilter`1.cs" />
+    <Compile Include="Rpc\Protocols\Filters\MessageFilteringLocation.cs" />
+    <Compile Include="Rpc\Protocols\Filters\MessageFilterProvider`1.cs" />
+    <Compile Include="Rpc\Protocols\OutboundMessageContext.cs" />
+    <Compile Include="Rpc\Protocols\ShutdownCompletedEventArgs.cs" />
+    <Compile Include="Rpc\Protocols\ShutdownSource.cs" />
+    <Compile Include="Rpc\Protocols\SocketAsyncEventArgsExtensions.cs" />
+    <Compile Include="Rpc\RpcApplicationContext.cs" />
+    <Compile Include="Rpc\TimeoutWatcher.cs" />
+    <Compile Include="Rpc\RpcException.PreserveStackTrace.cs" />
+    <Compile Include="Rpc\RpcIdentifierUtility.cs" />
+    <Compile Include="Rpc\MessagePackObjectExtension.cs" />
+    <Compile Include="Rpc\Protocols\MessageType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\Protocols\RpcMessageTooLongException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\Protocols\RpcMethodInvocationException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\Protocols\RpcProtocolException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\Protocols\RpcTransportException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\Protocols\SocketErrorCodeExtension.cs" />
+    <Compile Include="Rpc\RpcArgumentException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\RpcError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\RpcErrorMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\RpcException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\RpcException.Propagation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\RpcException.ToString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\RpcFaultException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\RpcMissingMethodException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\RpcServerUnavailableException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\RpcTimeoutException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\ServiceIdentifier.cs" />
+    <Compile Include="Rpc\StandardObjectPoolTrace.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StandardObjectPoolTrace.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rpc\StandardObjectPoolTrace.Extension.cs" />
+    <Compile Include="Rpc\StandardObjectPool`1.cs" />
+    <Compile Include="Rpc\UnexpcetedRpcException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\UnpackerExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\MsgPack.snk">
+      <Link>MsgPack.snk</Link>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Rpc\ObjectPoolConfiguration.Properties.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ObjectPoolConfiguration.Properties.cs</LastGenOutput>
+    </None>
+    <None Include="Rpc\StandardObjectPoolTrace.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StandardObjectPoolTrace.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

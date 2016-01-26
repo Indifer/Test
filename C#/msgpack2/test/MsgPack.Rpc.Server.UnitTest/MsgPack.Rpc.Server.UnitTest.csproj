@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{80AB610B-24E0-4853-AE24-0FFBBC5DD584}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MsgPack</RootNamespace>
+    <AssemblyName>MsgPack.Rpc.Server.UnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\src\MsgPack.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CodeAnalysis|AnyCPU'">
+    <OutputPath>bin\CodeAnalysis\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MsgPack, Version=0.5.0.0, Culture=neutral, PublicKeyToken=a2625990d5dc0167, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\MsgPack.Cli.0.5.3\lib\net40-client\MsgPack.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rpc\Server\DebugTraceSourceSetting.cs" />
+    <Compile Include="Rpc\Server\Dispatch\AsyncServiceInvokerTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\DefaultServiceTypeLocatorTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\DispatcherTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\DispatchTestHelper.cs" />
+    <Compile Include="Rpc\Server\Dispatch\FileBasedServiceTypeLocatorTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\InvocationHelperTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\Server\Dispatch\LocatorBasedDispatcherTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\SvcFileInterop\AttributeNameParsingStateTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\SvcFileInterop\AttributeValueParsingStateTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\SvcFileInterop\FinishedStateTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\SvcFileInterop\InitialStateTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\SvcFileInterop\RuntimeDirectiveIndicatorFoundStateTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\SvcFileInterop\ServerDirectiveIndicatorFoundStateTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\SvcFileInterop\StartTagFoundStateTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\SvcFileInterop\SvcDirectiveParserStateTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\SvcFileInterop\SvcFileParserTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\VersionedOperationCatalogTest.cs" />
+    <Compile Include="Rpc\Server\Protocols\Filters\ServerQuotaMessageFilterTest.cs" />
+    <Compile Include="Rpc\Server\Protocols\Filters\ServerStreamLoggingMessageFilterTest.cs" />
+    <Compile Include="Rpc\Server\Protocols\Filters\_SetUpFixture.cs" />
+    <Compile Include="Rpc\Server\Protocols\ListeningContextTest.cs" />
+    <Compile Include="Rpc\Server\Protocols\NullServerTransport.cs" />
+    <Compile Include="Rpc\Server\Protocols\NullServerTransportManager.cs" />
+    <Compile Include="Rpc\Server\Dispatch\OperationDescriptionTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\Server\Dispatch\ServiceDescriptionTest.cs" />
+    <Compile Include="Rpc\Server\Dispatch\ServiceDescriptionTest.Equals.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceDescriptionTest.Equals.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rpc\Server\Dispatch\ServiceInvokerGeneratorTest.cs" />
+    <Compile Include="Rpc\Server\IntegrationTest.cs" />
+    <Compile Include="Rpc\Server\Protocols\ServerRequestContextTest.cs" />
+    <Compile Include="Rpc\Server\Protocols\ServerResponseContextTest.cs" />
+    <Compile Include="Rpc\Server\Protocols\ServerTransportManagerTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\Server\Protocols\ServerTransportManager`1Test.cs" />
+    <Compile Include="Rpc\Server\Protocols\ServerTransportTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\Server\Protocols\TcpServerTransportTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rpc\Server\Protocols\UdpServerTransportTest.cs" />
+    <Compile Include="Rpc\Server\Protocols\_SetUpFixture.cs" />
+    <Compile Include="Rpc\Server\_SetUpFixture.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MsgPack.Rpc.Server\MsgPack.Rpc.Server.csproj">
+      <Project>{58547F06-05A0-4BBE-B07D-00CDB172CC5F}</Project>
+      <Name>MsgPack.Rpc.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\MsgPack.Rpc\MsgPack.Rpc.csproj">
+      <Project>{77ABC1A9-0719-47AD-B2E1-0B12E49E3CD2}</Project>
+      <Name>MsgPack.Rpc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MsgPack.Rpc.TestUtilities\MsgPack.Rpc.TestUtilities.csproj">
+      <Project>{99672076-5AE7-448A-A827-0BD37F182AD9}</Project>
+      <Name>MsgPack.Rpc.TestUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\MsgPack.snk">
+      <Link>MsgPack.snk</Link>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Rpc\Server\Dispatch\ServiceDescriptionTest.Equals.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ServiceDescriptionTest.Equals.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

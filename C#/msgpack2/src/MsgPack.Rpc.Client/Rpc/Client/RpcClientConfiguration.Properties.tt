@@ -1,0 +1,221 @@
+﻿<#
+//
+// MessagePack for CLI
+//
+// Copyright (C) 2010 FUJIWARA, Yusuke
+//
+//    Licensed under the Apache License, Version 2.0 (the "License");
+//    you may not use this file except in compliance with the License.
+//    You may obtain a copy of the License at
+//
+//        http://www.apache.org/licenses/LICENSE-2.0
+//
+//    Unless required by applicable law or agreed to in writing, software
+//    distributed under the License is distributed on an "AS IS" BASIS,
+//    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//    See the License for the specific language governing permissions and
+//    limitations under the License.
+//
+#>
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ include file="..\..\..\Configuration.ttinclude" #>
+<#@ assembly Name="System.Core" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+
+// This file defines RpcClientConfiguration which is chunk of boilerplate.
+var __properties =
+new List<Property>()
+{
+	new Property()
+	{
+		Name = "PreferIPv4",
+		Type = "bool",
+		Default = "false",
+		Summary = "Gets or sets whether use IP v4 even when IP v6 is supported.",
+		Value = "<c>true</c>, use IP v4 anyway; otherwise, <c>false</c>. " +
+			"The default is <c>false</c>.",
+	},
+	new Property()
+	{
+		Name = "MinimumConcurrentRequest",
+		Type = "int",
+		Default = "2",
+		Summary = "Gets or sets the minimum concurrency for the each clients.",
+		Value = "The minimum concurrency for the each clients. " +
+			"The default is 2.",
+		Precondition = Constraints.NotNegative,
+		Postcondition = Constraints.NotNegative
+	},
+	new Property()
+	{
+		Name = "MaximumConcurrentRequest",
+		Type = "int",
+		Default = "10",
+		Summary = "Gets or sets the maximum concurrency for the each clients.",
+		Value = "The maximum concurrency for the each clients. " +
+			"The default is 10.",
+		Precondition = Constraints.OnlyPositive,
+		Postcondition = Constraints.OnlyPositive
+	},
+	new Property()
+	{
+		Name = "ConnectTimeout",
+		Type = "TimeSpan?",
+		Default = "TimeSpan.FromSeconds( 120 )",
+		Summary = "Gets or sets the timeout value to connect.",
+		Value = "The timeout value to connect. " +
+			"The default is 120 seconds. <c>null</c> means inifinite timeout.",
+		Precondition = Constraints.NullOrPositive,
+		Postcondition = Constraints.NullOrPositive
+	},
+	new Property()
+	{
+		Name = "WaitTimeout",
+		Type = "TimeSpan?",
+		Default = "TimeSpan.FromSeconds( 120 )",
+		Summary = "Gets or sets the timeout value to wait response.",
+		Value = "The timeout value to wait response. " +
+			"The default is 120 seconds. <c>null</c> means inifinite timeout.",
+		Precondition = Constraints.NullOrPositive,
+		Postcondition = Constraints.NullOrPositive
+	},
+	new Property()
+	{
+		Name = "TransportManagerProvider",
+		Type = "Func<RpcClientConfiguration, ClientTransportManager>",
+		Default = "( configuration ) => new TcpClientTransportManager( configuration )",
+		Summary = "Gets or sets the factory function which creates new <see cref=\"ClientTransportManager\" />.",
+		Value = "The factory function which creates new <see cref=\"ClientTransportManager\" />. " +
+			"The default is the delegate which creates <see cref=\"TcpClientTransportManager\" /> instance.",
+		Precondition = Constraints.NotNull,
+		Postcondition = Constraints.NotNull
+	},
+	new Property()
+	{
+		Name = "InitialMethodNameBufferLength",
+		Type = "int",
+		Default = "256",
+		Summary = "Gets or sets the initial buffer size to pack method name.",
+		Value = "The initial buffer size to pack method name. " +
+			"The default is <c>256</c>."
+	},
+	new Property()
+	{
+		Name = "InitialArgumentsBufferLength",
+		Type = "int",
+		Default = "65536",
+		Summary = "Gets or sets the initial buffer size to pack arguments.",
+		Value = "The initial buffer size to pack arguments. " +
+			"The default is <c>65536</c>."
+	},
+	new Property()
+	{
+		Name = "InitialReceiveBufferLength",
+		Type = "int",
+		Default = "65536",
+		Summary = "Gets or sets the initial buffer size to receive packets.",
+		Value = "The initial buffer size to receive packets. " +
+			"The default is <c>65536</c>."
+	},
+	new Property()
+	{
+		Name = "DumpCorruptResponse",
+		Type = "Boolean",
+		Default = "false",
+		Summary = "Gets or sets the value whether transport should dump invalid response stream for debugging purposes.",
+		Value = "<c>true</c>, if the corrupt response dumping is enabled; <c>false</c>, otherwise.",
+		Precondition = Constraints.None,
+		Postcondition = Constraints.None
+	},
+	new Property()
+	{
+		Name = "CorruptResponseDumpOutputDirectory",
+		Type = "String",
+		Default = "null",
+		Summary = "Gets or sets the directory path the corrupt response dump file is created.",
+		Value = "The directory path the corrupt response dump file is created. " +
+			"To use default location, specify <c>null</c>. " +
+			"The default is <c>null</c>. " +
+			"The enviroment variable can be embeded.",
+		Precondition = Constraints.None,
+		Postcondition = Constraints.None,
+		Remarks = new String[]
+		{
+			"The default location is <c>MsgPack\\v&lt;MsgPack.Rpc.Client AssemblyVersion&lt;\\Client\\Dump</c> under the <c>LocalApplicationDataDirectory</c>.",
+			"The <c>LocalApplicaitonDataDirectory</c> can be gotten using <see cref=\"Environment.GetFolderPath(Environment.SpecialFolder)\" /> with <see cref=\"Environment.SpecialFolder.LocalApplicationData\" />, which is platform dependent.",
+			"For example, it is <c>%UserProfile%\\Application Data\\Local</c> in Windows prior to Windows Vista/Server 2008, <c>%LocalAppData%</c> on recent Windows, and <c>/home/.config/share</c> in Mono on *nix."
+		}
+	}
+};
+
+Func<string, string, Property> __objectPoolProviderPropertyFactory =
+	( string name, string poolee ) =>
+		new Property()
+		{
+			Name = name,
+			Type = "Func<Func<" + poolee + ">, ObjectPoolConfiguration, ObjectPool<" + poolee + ">>",
+			Default = "( factory, configuration ) => new StandardObjectPool<" + poolee + ">( factory, configuration )",
+			Summary = "Gets or sets the factory function which creates new <see cref=\"ObjectPool{T}\" /> of " +
+				"<see cref=\""+ poolee + "\" />.",
+			Value = "The factory function which creates new <see cref=\"ObjectPool{T}\" /> of " +
+				"<see cref=\""+ poolee + "\" />. " +
+				"The default is the delegate which creates <see cref=\"StandardObjectPool{T}\" /> instance with <c>null</c> configuration.",
+			Precondition = Constraints.NotNull,
+			Postcondition = Constraints.NotNull
+		};
+
+__properties.Add( 
+	__objectPoolProviderPropertyFactory(
+		"RequestContextPoolProvider",
+		"ClientRequestContext"
+	)
+);
+__properties.Add( 
+	__objectPoolProviderPropertyFactory(
+		"ResponseContextPoolProvider",
+		"ClientResponseContext"
+	)
+);
+__properties.Add( 
+	__objectPoolProviderPropertyFactory(
+		"TcpTransportPoolProvider",
+		"TcpClientTransport"
+	)
+);
+__properties.Add( 
+	__objectPoolProviderPropertyFactory(
+		"UdpTransportPoolProvider",
+		"UdpClientTransport"
+	)
+);
+
+#>
+#region -- License Terms --
+//
+// MessagePack for CLI
+//
+// Copyright (C) 2010 FUJIWARA, Yusuke
+//
+//    Licensed under the Apache License, Version 2.0 (the "License");
+//    you may not use this file except in compliance with the License.
+//    You may obtain a copy of the License at
+//
+//        http://www.apache.org/licenses/LICENSE-2.0
+//
+//    Unless required by applicable law or agreed to in writing, software
+//    distributed under the License is distributed on an "AS IS" BASIS,
+//    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//    See the License for the specific language governing permissions and
+//    limitations under the License.
+//
+#endregion -- License Terms --
+
+using System;
+using System.Diagnostics.Contracts;
+using System.Net;
+using System.Text;
+using MsgPack.Rpc.Client.Protocols;
+<#=  Generate( "MsgPack.Rpc.Client", "RpcClientConfiguration", __properties.ToArray() ) #>
