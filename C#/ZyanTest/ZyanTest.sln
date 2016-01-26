@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZyanClientConsoleApp", "ZyanClientConsoleApp\ZyanClientConsoleApp.csproj", "{AD4EE4FD-A3E7-4797-AC25-F31FB54A6C23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZyanServerConsoleApp", "ZyanServerConsoleApp\ZyanServerConsoleApp.csproj", "{3C75E559-3EFC-4EFE-B515-60B8D88F34C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{50A0BCAE-ADC0-43F1-A162-18D84FCF9A26}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD4EE4FD-A3E7-4797-AC25-F31FB54A6C23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD4EE4FD-A3E7-4797-AC25-F31FB54A6C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD4EE4FD-A3E7-4797-AC25-F31FB54A6C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD4EE4FD-A3E7-4797-AC25-F31FB54A6C23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C75E559-3EFC-4EFE-B515-60B8D88F34C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C75E559-3EFC-4EFE-B515-60B8D88F34C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C75E559-3EFC-4EFE-B515-60B8D88F34C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C75E559-3EFC-4EFE-B515-60B8D88F34C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50A0BCAE-ADC0-43F1-A162-18D84FCF9A26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A0BCAE-ADC0-43F1-A162-18D84FCF9A26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A0BCAE-ADC0-43F1-A162-18D84FCF9A26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A0BCAE-ADC0-43F1-A162-18D84FCF9A26}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

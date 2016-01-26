@@ -13,8 +13,7 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            UserServer userServer = new UserServer();
-            UserServer.Processor processor = new UserServer.Processor();
+            UserService.Processor processor = new UserService.Processor(new UserProxy());
             TServerSocket serverSocket = new TServerSocket(12000, 0, false);
             TServer server = new TSimpleServer(processor, serverSocket);
 
@@ -23,6 +22,19 @@ namespace Server
 
             Console.ReadLine();
 
+        }
+    }
+
+    public class UserProxy : UserService.Iface
+    {
+        public List<User> GetAllUser()
+        {
+            throw new NotImplementedException();
+        }
+
+        public User GetUserByID(int userID)
+        {
+            throw new NotImplementedException();
         }
     }
 

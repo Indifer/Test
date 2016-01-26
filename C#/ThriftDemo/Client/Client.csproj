@@ -46,8 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Server\IUser.cs">
-      <Link>IUser.cs</Link>
+    <Compile Include="..\gen-csharp\Server\User.cs">
+      <Link>User.cs</Link>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
