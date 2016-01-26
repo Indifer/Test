@@ -36,14 +36,15 @@ namespace EmitMapperConApp
             //Console.WriteLine(dst.F);
 
             Stopwatch sw = new Stopwatch();
-            int speed = 100000;
+            int seed = 500000;
 
             ObjectsMapper<Sourse, Dest> mapper = ObjectMapperManager.DefaultInstance.GetMapper<Sourse, Dest>();
             var mapperImpl = mapper.MapperImpl;
             sw.Restart();
-            for (var i = 0; i < speed; i++)
+            for (var i = 0; i < seed; i++)
             {
-                mapper = new ObjectsMapper<Sourse, Dest>(mapperImpl);
+                mapper = ObjectMapperManager.DefaultInstance.GetMapper<Sourse, Dest>();
+                //mapper = new ObjectsMapper<Sourse, Dest>(mapperImpl);
                 dst = mapper.Map(src);
             }
             sw.Stop();
@@ -51,7 +52,7 @@ namespace EmitMapperConApp
             dst = ModelConverter.ConvertObject<Sourse, Dest>(src);
 
             sw.Restart();
-            for (var i = 0; i < speed; i++)
+            for (var i = 0; i < seed; i++)
             {
                 dst = ModelConverter.ConvertObject<Sourse, Dest>(src);
             }
@@ -59,7 +60,7 @@ namespace EmitMapperConApp
             Console.WriteLine(sw.ElapsedMilliseconds);
 
             sw.Restart();
-            for (var i = 0; i < speed; i++)
+            for (var i = 0; i < seed; i++)
             {
                 dst = ModelConverter.ConvertModel<Sourse, Dest>(src);
             }

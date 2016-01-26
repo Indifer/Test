@@ -46,16 +46,27 @@ namespace EmitMapperConApp
             Type tout = typeof(TOut);
 
             string typeKey = string.Concat(tin, "|", tout);
+            ObjectsMapperBaseImpl mapperBase = null;
             ObjectsMapper<TIn, TOut> mapper = null;
-            if (!_dictMapping.ContainsKey(typeKey))
+            if (_dictMapping.TryGetValue(typeKey, out mapperBase))
+            {
+                mapper = new ObjectsMapper<TIn, TOut>(mapperBase);
+            }
+            else
             {
                 mapper = ObjectMapperManager.DefaultInstance.GetMapper<TIn, TOut>();
                 _dictMapping[typeKey] = mapper.MapperImpl;
             }
-            else
-            {
-                mapper = new ObjectsMapper<TIn, TOut>(_dictMapping[typeKey]);
-            }
+
+            //if (!_dictMapping.ContainsKey(typeKey))
+            //{
+            //    mapper = ObjectMapperManager.DefaultInstance.GetMapper<TIn, TOut>();
+            //    _dictMapping[typeKey] = mapper.MapperImpl;
+            //}
+            //else
+            //{
+            //    mapper = new ObjectsMapper<TIn, TOut>(_dictMapping[typeKey]);
+            //}
 
             return mapper.Map(inData);
         }
