@@ -23,13 +23,14 @@ namespace Client
             strongHubProxy = hubConnection.CreateHubProxy("StrongHub");
             //stockTickerHubProxy.On<string>("UpdateStockPrice", stock => Console.WriteLine("Stock update for {0} new price {1}", stock.Symbol, stock.Price));
             //await hubConnection.Start
-            
-            
-            
+
+
+
 
             hubConnection.Start(new WebSocketTransport()).Wait();
 
-            int seed = 1;
+            int seed = 500;
+            int iteration = 100;
             System.Threading.ThreadPool.SetMinThreads(50, 50);
             Task[] taskList = new Task[seed];
 
@@ -37,13 +38,13 @@ namespace Client
             sw.Restart();
             for (var i = 0; i < seed; i++)
             {
-                taskList[i] = Invoke();
+                taskList[i] = Invoke(iteration);
             }
 
             Task.WaitAll(taskList);
             sw.Stop();
 
-            Console.WriteLine(sw.ElapsedMilliseconds);
+            Console.WriteLine("total second:{0}, count:{1}, tps:{2}", sw.ElapsedMilliseconds, seed * iteration, seed * iteration/ sw.ElapsedMilliseconds * 1000);
 
             //strongHubProxy.On<string>("NewMessage", (x) =>
             //{
@@ -55,9 +56,9 @@ namespace Client
         }
 
 
-        public static async Task Invoke()
+        public static async Task Invoke(int iteration)
         {
-            for (var i = 0; i < 100; i++)
+            for (var i = 0; i < iteration; i++)
             {
                 string res = await stockTickerHubProxy.Invoke<string>("NewContosoChatMessage", "abc", "efg");
             }
