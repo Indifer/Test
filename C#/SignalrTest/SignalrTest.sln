@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{B99FEA6F-FB94-456D-A655-CB3BF9C5E18F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormClient", "WinFormClient\WinFormClient.csproj", "{F104FCC0-3E79-435A-BC68-3EF06B9D462C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B99FEA6F-FB94-456D-A655-CB3BF9C5E18F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B99FEA6F-FB94-456D-A655-CB3BF9C5E18F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B99FEA6F-FB94-456D-A655-CB3BF9C5E18F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F104FCC0-3E79-435A-BC68-3EF06B9D462C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F104FCC0-3E79-435A-BC68-3EF06B9D462C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F104FCC0-3E79-435A-BC68-3EF06B9D462C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F104FCC0-3E79-435A-BC68-3EF06B9D462C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
