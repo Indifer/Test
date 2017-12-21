@@ -6,15 +6,22 @@ public class GenericsTest<T> {
 
     public GenericsTest() {
         Type genType = getClass().getGenericSuperclass();
-        Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
-        clazz = (Class) params[0];
+        if (genType instanceof ParameterizedType) {
+            Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
+            clazz = (Class) params[0];
+        }
     }
+
+    public void theClassName() {
+        if (clazz != null) {
+            System.out.println("clazz.getName():" + clazz.getName());
+        } else {
+            System.out.println("clazz is unacknowledged");
+        }
+    }
+
 }
 
 class GenericsDuck extends GenericsTest<Duck> {
-
-    public void theClassName(){
-        System.out.println("clazz.getName():" + clazz.getName());
-    }
 
 }

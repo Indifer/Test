@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutionException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         //#region for-each
 
@@ -74,8 +74,24 @@ public class Main {
 
         //#endregion
 
+        //#region 泛型
+
         GenericsTest<Duck> genericsTest = new GenericsDuck();
         ((GenericsDuck) genericsTest).theClassName();
+
+        (new GenericsTest<Birds>()).theClassName();
+
+        //#endregion
+
+        //#region 异步
+
+        AsyncTaskTest asyncTaskTest = new AsyncTaskTest();
+
+        asyncTaskTest.executorServiceTest();
+        asyncTaskTest.completionServiceTest();
+        asyncTaskTest.completableFutureTest();
+
+        //#endregion
 
         //#region Exception
 
