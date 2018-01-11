@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="hello.User">
+        <property name="id" value="123"></property>
+        <property name="name" value="孙尚香"></property>
+    </bean>
+
+    <bean id="user2" class="hello.User">
+        <constructor-arg value="99" type="long" index="0" ></constructor-arg>
+        <constructor-arg value="阿克" type="java.lang.String" index="1" ></constructor-arg>
+    </bean>
+
+    <bean id="user3" class="hello.User">
+        <constructor-arg value="99" type="int" index="0" ></constructor-arg>
+        <constructor-arg value="阿克" type="java.lang.String" index="1" ></constructor-arg>
+    </bean>
+
+    <bean id="mall" class="hello.Mall">
+        <property name="id" value="123"></property>
+        <property name="name" value="大悦城"></property>
+    </bean>
+</beans>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="c391737c-2b0f-4622-a11a-33a122de779f" name="liang@DESKTOP-R1E00TE 2018-01-11 16:36:30" runUser="DESKTOP-R1E00TE\liang" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="本地" id="b13188a5-d99f-4641-a1bf-4db098efa844">
+    <Description>这些设置为本地测试运行的默认测试设置。</Description>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Deployment runDeploymentRoot="liang_DESKTOP-R1E00TE 2018-01-11 16_36_30" />
+    <Properties>
+      <Property name="TestSettingsUIType" value="LoadTest" />
+    </Properties>
+  </TestSettings>
+  <Times creation="2018-01-11T16:36:30.5355990+08:00" queuing="2018-01-11T16:36:31.1240257+08:00" start="2018-01-11T16:36:31.2460381+08:00" finish="2018-01-11T16:37:25.8301148+08:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <WebTest name="WebTest1" storage="e:\work\github_indifer\test\c#\webandloadtestproject1\webandloadtestproject1\webtest1.webtest" id="8864bee8-7866-463e-9fd7-6b8cd38ec198" persistedWebTest="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pg0KPFdlYlRlc3QgTmFtZT0iV2ViVGVzdDEiIElkPSI4ODY0YmVlOC03ODY2LTQ2M2UtOWZkNy02YjhjZDM4ZWMxOTgiIE93bmVyPSIiIFByaW9yaXR5PSIyMTQ3NDgzNjQ3IiBFbmFibGVkPSJUcnVlIiBDc3NQcm9qZWN0U3RydWN0dXJlPSIiIENzc0l0ZXJhdGlvbj0iIiBUaW1lb3V0PSIwIiBXb3JrSXRlbUlkcz0iIiB4bWxucz0iaHR0cDovL21pY3Jvc29mdC5jb20vc2NoZW1hcy9WaXN1YWxTdHVkaW8vVGVhbVRlc3QvMjAxMCIgRGVzY3JpcHRpb249IiIgQ3JlZGVudGlhbFVzZXJOYW1lPSIiIENyZWRlbnRpYWxQYXNzd29yZD0iIiBQcmVBdXRoZW50aWNhdGU9IlRydWUiIFByb3h5PSJkZWZhdWx0IiBTdG9wT25FcnJvcj0iRmFsc2UiIFJlY29yZGVkUmVzdWx0RmlsZT0iIiBSZXN1bHRzTG9jYWxlPSIiPg0KICA8SXRlbXM+DQogICAgPExvb3AgVW5pcXVlU3RyaW5nSWQ9IjJjZTM5YjM4LTA1ZDItNGQwZC1hNTQ1LWUxOWY1Mjk4N2E2YiI+DQogICAgICA8Q29uZGl0aW9uYWxSdWxlIENsYXNzbmFtZT0iTWljcm9zb2Z0LlZpc3VhbFN0dWRpby5UZXN0VG9vbHMuV2ViVGVzdGluZy5SdWxlcy5Gb3JMb29wUnVsZSwgTWljcm9zb2Z0LlZpc3VhbFN0dWRpby5RdWFsaXR5VG9vbHMuV2ViVGVzdEZyYW1ld29yaywgVmVyc2lvbj0xMC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhIiBEaXNwbGF5TmFtZT0iRm9yIOW+queOryIgRGVzY3JpcHRpb249IuinhOWImeihqOekuuS8oOe7n+eahOKAnGZvcuKAneW+queOr+OAguWcqOmmluasoeW+queOr+i/reS7o+S5i+WJjeWIneWni+WMluS4iuS4i+aWh+WPguaVsOOAguS4iuS4i+aWh+WPguaVsOeahOWGheWuuea7oei2s+S4juaJgOaPkOS+m+WAvOeahOavlOi+g+aXtu+8jOWNs+aJp+ihjOW+queOr+ivreWPpeOAguWcqOavj+S4quW+queOr+i/reS7o+eahOe7k+WwvuWkhOW6lOeUqOatpemqpOWAvOOAgiIgTWF4SXRlcmF0aW9ucz0iLTEiIEFkdmFuY2VEYXRhQ3Vyc29ycz0iRmFsc2UiPg0KICAgICAgICA8UnVsZVBhcmFtZXRlcnM+DQogICAgICAgICAgPFJ1bGVQYXJhbWV0ZXIgTmFtZT0iQ29udGV4dFBhcmFtZXRlck5hbWUiIFZhbHVlPSJpbmRleCIgLz4NCiAgICAgICAgICA8UnVsZVBhcmFtZXRlciBOYW1lPSJDb21wYXJpc29uT3BlcmF0b3IiIFZhbHVlPSImbHQ7IiAvPg0KICAgICAgICAgIDxSdWxlUGFyYW1ldGVyIE5hbWU9IlRlcm1pbmF0aW5nVmFsdWUiIFZhbHVlPSIxMDAwMCIgLz4NCiAgICAgICAgICA8UnVsZVBhcmFtZXRlciBOYW1lPSJJbml0aWFsVmFsdWUiIFZhbHVlPSIwIiAvPg0KICAgICAgICAgIDxSdWxlUGFyYW1ldGVyIE5hbWU9IkluY3JlbWVudFZhbHVlIiBWYWx1ZT0iMSIgLz4NCiAgICAgICAgPC9SdWxlUGFyYW1ldGVycz4NCiAgICAgIDwvQ29uZGl0aW9uYWxSdWxlPg0KICAgICAgPEl0ZW1zPg0KICAgICAgICA8UmVxdWVzdCBNZXRob2Q9IkdFVCIgR3VpZD0iZjBmNjEwYTUtZWQ5YS00OTcxLTk1NDUtYjg4YTUwOTY0MDg1IiBWZXJzaW9uPSIxLjEiIFVybD0iaHR0cDovLzE5Mi4xNjguMi44MDo4MDgwL29yZGVyL3B1dDIiIFRoaW5rVGltZT0iMCIgVGltZW91dD0iMzAwIiBQYXJzZURlcGVuZGVudFJlcXVlc3RzPSJUcnVlIiBGb2xsb3dSZWRpcmVjdHM9IlRydWUiIFJlY29yZFJlc3VsdD0iVHJ1ZSIgQ2FjaGU9IkZhbHNlIiBSZXNwb25zZVRpbWVHb2FsPSIwIiBFbmNvZGluZz0idXRmLTgiIEV4cGVjdGVkSHR0cFN0YXR1c0NvZGU9IjAiIEV4cGVjdGVkUmVzcG9uc2VVcmw9IiIgUmVwb3J0aW5nTmFtZT0iIiBJZ25vcmVIdHRwU3RhdHVzQ29kZT0iRmFsc2UiPg0KICAgICAgICAgIDxIZWFkZXJzPg0KICAgICAgICAgICAgPEhlYWRlciBOYW1lPSJBY2NlcHQiIFZhbHVlPSJhcHBsaWNhdGlvbi9qc29uOyBjaGFyc2V0PXV0Zi04IiAvPg0KICAgICAgICAgIDwvSGVhZGVycz4NCiAgICAgICAgICA8UXVlcnlTdHJpbmdQYXJhbWV0ZXJzPg0KICAgICAgICAgICAgPFF1ZXJ5U3RyaW5nUGFyYW1ldGVyIE5hbWU9ImFhIiBWYWx1ZT0iMjIiIFJlY29yZGVkVmFsdWU9IiIgQ29ycmVsYXRpb25CaW5kaW5nPSIiIFVybEVuY29kZT0iVHJ1ZSIgVXNlVG9Hcm91cFJlc3VsdHM9IkZhbHNlIiAvPg0KICAgICAgICAgIDwvUXVlcnlTdHJpbmdQYXJhbWV0ZXJzPg0KICAgICAgICA8L1JlcXVlc3Q+DQogICAgICA8L0l0ZW1zPg0KICAgIDwvTG9vcD4NCiAgPC9JdGVtcz4NCjwvV2ViVGVzdD4=">
+      <Execution id="bdf0e74b-fb8a-4baf-9812-6b1055eaf74b" />
+    </WebTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry isTransparent="false" testId="8864bee8-7866-463e-9fd7-6b8cd38ec198" executionId="bdf0e74b-fb8a-4baf-9812-6b1055eaf74b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <WebTestResult executionId="bdf0e74b-fb8a-4baf-9812-6b1055eaf74b" testId="8864bee8-7866-463e-9fd7-6b8cd38ec198" testName="WebTest1" computerName="DESKTOP-R1E00TE" duration="00:00:36.7466457" startTime="2018-01-11T16:36:31.3809031+08:00" endTime="2018-01-11T16:37:18.7651184+08:00" testType="4e7599fa-5ecb-43e9-a887-cd63cf72d207" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bdf0e74b-fb8a-4baf-9812-6b1055eaf74b">
+      <ResultFiles>
+        <ResultFile path="WebTest1.webtestResult" />
+      </ResultFiles>
+      <TestSettings name="本地" id="b13188a5-d99f-4641-a1bf-4db098efa844">
+        <Description>这些设置为本地测试运行的默认测试设置。</Description>
+        <Execution>
+          <TestTypeSpecific>
+            <WebTestRunConfiguration testTypeId="4e7599fa-5ecb-43e9-a887-cd63cf72d207">
+              <Browser name="Internet Explorer 9.0" MaxConnections="6">
+                <Headers>
+                  <Header name="User-Agent" value="Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)" />
+                  <Header name="Accept" value="*/*" />
+                  <Header name="Accept-Language" value="{{$IEAcceptLanguage}}" />
+                  <Header name="Accept-Encoding" value="GZIP" />
+                </Headers>
+              </Browser>
+            </WebTestRunConfiguration>
+          </TestTypeSpecific>
+          <AgentRule name="Execution Agents">
+          </AgentRule>
+        </Execution>
+        <Deployment runDeploymentRoot="liang_DESKTOP-R1E00TE 2018-01-11 16_36_30" />
+        <Properties>
+          <Property name="TestSettingsUIType" value="LoadTest" />
+        </Properties>
+      </TestSettings>
+      <WebTestResultFilePath>liang_DESKTOP-R1E00TE 2018-01-11 16_36_30\In\bdf0e74b-fb8a-4baf-9812-6b1055eaf74b\WebTest1.webtestResult</WebTestResultFilePath>
+    </WebTestResult>
+  </Results>
+</TestRun>
