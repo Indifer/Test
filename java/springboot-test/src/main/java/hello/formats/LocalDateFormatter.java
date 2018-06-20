@@ -7,6 +7,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
+/**
+ * LocalDate格式化
+ */
 public class LocalDateFormatter implements Formatter<LocalDateTime> {
 
     public static final String LocalDate_Formatter = "yyyy/MM/dd HH:mm:ss";

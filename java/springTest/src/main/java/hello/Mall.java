@@ -3,6 +3,7 @@ package hello;
 public class Mall {
     private long id;
     private String name;
+    private User user;
 
     public long getId() {
         return id;
@@ -20,11 +21,20 @@ public class Mall {
         this.name = name;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Mall() {
 
     }
 
     public Mall(long id, String name) {
+
 
         this.id = id;
         this.name = name;
@@ -35,6 +45,7 @@ public class Mall {
         return "Mall{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", user=" + user +
                 '}';
     }
 }

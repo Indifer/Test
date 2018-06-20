@@ -7,12 +7,13 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Threading;
 using System.Threading.Tasks;
+using Handle;
 
 namespace ConsoleAppEmit
 {
     public interface IMy
     {
-        void hi();
+        //void hi<T>(T t);
     }
 
     public class Program
@@ -21,30 +22,47 @@ namespace ConsoleAppEmit
             MethodAttributes.Public | MethodAttributes.NewSlot | MethodAttributes.Virtual | MethodAttributes.Final | MethodAttributes.HideBySig;
         static void Main(string[] args)
         {
-            //AppDomain appDomain = AppDomain.CurrentDomain;
+            AppDomain appDomain = AppDomain.CurrentDomain;
 
-            //AssemblyName assembly = new AssemblyName();
-            //assembly.Name = "TestEmit";
-            //AssemblyBuilder builder = appDomain.DefineDynamicAssembly(assembly, AssemblyBuilderAccess.RunAndSave);
-            //ModuleBuilder module = builder.DefineDynamicModule("testmod", "TestEmit.dll");
-            //TypeBuilder type = module.DefineType("myType", TypeAttributes.Public, typeof(object), new Type[] { typeof(IMy) });
-            //MethodBuilder method = type.DefineMethod("hi", METHOD_ATTRIBUTES, CallingConventions.Standard, null, null);
+            AssemblyName assembly = new AssemblyName();
+            assembly.Name = "TestEmit";
+            AssemblyBuilder builder = appDomain.DefineDynamicAssembly(assembly, AssemblyBuilderAccess.RunAndSave);
+            ModuleBuilder module = builder.DefineDynamicModule("testmod", "TestEmit.dll");
+            TypeBuilder type = module.DefineType("myType", TypeAttributes.Public, typeof(object), new Type[] { typeof(IMy) });
 
-            ////builder.SetEntryPoint(method);
+            MethodBuilder method = type.DefineMethod("hi", METHOD_ATTRIBUTES, CallingConventions.Standard, null, null);
+            method.SetReturnType(typeof(string));
+            //var gpas = method.DefineGenericParameters("Handle");
+            //gpas[0].MakeGenericType(typeof(String));
+            method.SetParameters(typeof(object));
+            method.DefineParameter(1, ParameterAttributes.None, "obj");
+            //builder.SetEntryPoint(method);
 
-            //ILGenerator il = method.GetILGenerator();
-            //il.EmitWriteLine("Hello World");
-            //il.Emit(OpCodes.Ret);
+            // 方法hi
+            // public void hi()
+            // {
+            //     Console.WriteLine("Hello World");
+            // }
 
-            //var wrapperType = type.CreateType();
+            MethodInfo getNameMethod = typeof(Mall).GetMethod("get_Name", Type.EmptyTypes);
 
-            //object result = Activator.CreateInstance(wrapperType);
+            ILGenerator il = method.GetILGenerator();
+            LocalBuilder localBuilder = il.DeclareLocal(typeof(Mall));
+            il.Emit(OpCodes.Ldarg_1);
+            //il.Emit(OpCodes.Call, typeof(Console).GetMethod("WriteLine", new Type[] { }));
+            il.Emit(OpCodes.Ret);
 
-            //(result as IMy).hi();
-            //builder.Save("TestEmit.dll");
+            // end
+
+            var wrapperType = type.CreateType();
+
+            object result = Activator.CreateInstance(wrapperType);
+
+            //(result as IMy).hi<string>("abc");
+            builder.Save("TestEmit.dll");
 
 
-            //return;
+            return;
 
             Program p = new Program();
             IHelloWorld helloWorld = DynamicInterfaceWrapper.GetWrapper<IHelloWorld>(p);
@@ -191,7 +209,7 @@ namespace ConsoleAppEmit
             myAssemblyName.Name = RandomName;
             myAssembly = AppDomain.CurrentDomain.DefineDynamicAssembly(
                 myAssemblyName, AssemblyBuilderAccess.RunAndSave);
-            ModuleBuilder myModule = myAssembly.DefineDynamicModule(RandomName,"dd.dll");
+            ModuleBuilder myModule = myAssembly.DefineDynamicModule(RandomName, "dd.dll");
             _type = myModule.DefineType(RandomName,
                 TYPE_ATTRIBUTES, typeof(object), new Type[] { _interfaceType });
         }

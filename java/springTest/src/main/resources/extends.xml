@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 抽象模板，不可实例化 -->
+    <bean id="mall-ex" class="hello.Mall" p:id="111" p:name="猫酷" abstract="true"></bean>
+
+    <!-- 继承模板 -->
+    <bean id="mall-ex2" parent="mall-ex"></bean>
+
+    <!-- 抽象模板，不指定class类型，必须是抽象bean -->
+    <bean id="mall2-ex" p:id="222" p:name="武商" abstract="true"></bean>
+
+    <!-- 继承模板 -->
+    <!-- depends-on: 限定依赖的bean，多个可以空格或逗号隔开 -->
+    <bean id="mall2-ex2" class="hello.Mall" parent="mall2-ex" depends-on="user-for-depends"></bean>
+
+    <bean id="user-for-depends" class="hello.User" p:name="武商谁来管"></bean>
+
+</beans>

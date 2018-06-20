@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <!-- 扫描类包以应用注解定义的Bean, 配合@Component -->
+    <context:component-scan base-package="hello"></context:component-scan>
 
     <import resource="entity.xml"></import>
+    <import resource="autowire.xml"></import>
+    <import resource="extends.xml"></import>
+    <import resource="scope.xml"></import>
+    <import resource="properties-config.xml"></import>
+    <import resource="SpEL.xml"></import>
+
 </beans>

@@ -3,11 +3,19 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.lang.annotation.Target;
 import java.text.ParseException;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.concurrent.ExecutionException;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
+
+        String str1 = "hello";
+        String str2 = new String("hello");
+
+        System.out.println(str1 == str2);
+        System.out.println(str1.equals(str2));
 
         //#region for-each
 

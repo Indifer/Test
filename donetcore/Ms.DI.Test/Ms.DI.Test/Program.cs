@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Ms.DI.Test
 {
@@ -6,7 +7,11 @@ namespace Ms.DI.Test
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            ServiceCollection serviceCollection = new ServiceCollection();
+            serviceCollection.BuildServiceProvider().GetRequiredService
+
+
         }
     }
 }

@@ -1,0 +1,16 @@
+
+spring:
+  cloud:
+    consul:
+      host: 172.31.224.198
+      port: 8500
+      discovery:
+        enabled: true
+        hostname: 172.31.224.193
+        instance-id: users${spring.cloud.consul.discovery.hostname}:${server.port}
+        service-name: getUsers
+        tags: ly
+  application:
+    name: zwc-service1
+server:
+  port: 14000

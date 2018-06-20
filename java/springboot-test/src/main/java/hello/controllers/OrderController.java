@@ -2,8 +2,10 @@ package hello.controllers;
 
 
 import com.sun.org.apache.xpath.internal.operations.Or;
+import hello.bean.SpringContextUtils;
 import hello.dto.Order;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -87,5 +89,15 @@ public class OrderController {
         RequestAttributes requestAttr = RequestContextHolder.currentRequestAttributes();
 
         return ((ServletRequestAttributes) requestAttr).getRequest().getQueryString();
+    }
+
+    private Order getOrder() {
+        return SpringContextUtils.getApplicationContext().getBean(Order.class, request.getQueryString());
+    }
+
+    @ResponseBody
+    @RequestMapping("/getiphone")
+    public Order getIphone() {
+        return getOrder();
     }
 }
