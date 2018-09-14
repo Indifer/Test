@@ -1,7 +1,0 @@
-spring:
-  cloud:
-    consul:
-      discovery:
-        register: false
-      host: 172.31.224.198
-      port: 8500
